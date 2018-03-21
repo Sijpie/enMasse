@@ -1,5 +1,5 @@
-﻿  main.cpp
-  ofApp.cpp
+﻿  ofApp.cpp
+src\ofApp.cpp(40): warning C4101: 'angle': unreferenced local variable
   enMasse.vcxproj -> D:\Openframeworks\of_v0.9.8_vs_release\of_v0.9.8_vs_release\apps\KM3\enMasse\bin\enMasse_debug.exe
   enMasse.vcxproj -> bin\enMasse_debug.pdb (Full PDB)
   

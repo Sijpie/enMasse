@@ -38,12 +38,9 @@ void ofApp::draw() {
 	
 	ofVec3f axis;
 	float angle;
-	curRot.getRotate(angle, axis);
+	//curRot.getRotate(angle, axis);
 
-	ofRotate(angle, axis.x, axis.y, axis.z);
-	//ofSetColor(ofColor::darkBlue);
-	/*ofNoFill();
-	ofDrawSphere(0, 0, 0, 200);*/
+//	ofRotate(angle, axis.x, axis.y, axis.z);
 
 	sphere.setRadius(200);
 	sphere.setResolution(30);
@@ -61,7 +58,7 @@ void ofApp::draw() {
 	}
 
 	ofSetColor(ofColor::darkBlue);
-	glPointSize(10);
+	glPointSize(1);
 	bol.drawWireframe();
 	bol.drawVertices();
 
@@ -70,6 +67,7 @@ void ofApp::draw() {
 	ofVec2f nearestVertex;
 	int nearestIndex = 0;
 	ofVec2f mouse(mouseX, mouseY);
+	
 	for (int i = 0; i < 6; i++) {
 		ofVec3f cur = cam.worldToScreen(bol.getVertex(active[i]));
 		float distance = cur.distance(mouse);
@@ -96,9 +94,9 @@ void ofApp::draw() {
 	cam.end();
 
 //draw user circle
-	/*ofFill();
+	ofFill();
 	ofSetColor(color);
-	ofDrawCircle(ofGetScreenWidth()/2, ofGetScreenHeight()/2, 20);*/
+	ofDrawCircle(bol.getVertex(100), 40);
 
 	//social pins
 	//int sPin = sPins[selectedPin];

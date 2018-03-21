@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<ClCompile Include="src\ofApp.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
+		<ClCompile Include="src\main.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxBaseGui.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxButton.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxGuiGroup.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxLabel.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxPanel.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxSlider.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxSliderGroup.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxToggle.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxJSON\src\ofxJSONElement.cpp">
+			<Filter>addons\ofxJSON\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxJSON\libs\jsoncpp\src\jsoncpp.cpp">
+			<Filter>addons\ofxJSON\libs\jsoncpp\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxSQLiteCpp\src\SQLiteCppUtils.cpp">
+			<Filter>addons\ofxSQLiteCpp\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\sqlite3\sqlite3.c">
+			<Filter>addons\ofxSQLiteCpp\libs\SQLiteCpp\sqlite3</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\src\Backup.cpp">
+			<Filter>addons\ofxSQLiteCpp\libs\SQLiteCpp\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\src\Column.cpp">
+			<Filter>addons\ofxSQLiteCpp\libs\SQLiteCpp\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\src\Database.cpp">
+			<Filter>addons\ofxSQLiteCpp\libs\SQLiteCpp\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\src\Statement.cpp">
+			<Filter>addons\ofxSQLiteCpp\libs\SQLiteCpp\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\src\Transaction.cpp">
+			<Filter>addons\ofxSQLiteCpp\libs\SQLiteCpp\src</Filter>
+		</ClCompile>
+	</ItemGroup>
+	<ItemGroup>
+		<Filter Include="src">
+			<UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons">
+			<UniqueIdentifier>{71834F65-F3A9-211E-73B8-DC85}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxGui">
+			<UniqueIdentifier>{4F2A59AF-5F4E-704B-D067-EC13}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxGui\src">
+			<UniqueIdentifier>{645E9533-4DCD-6179-1CDF-CB65}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxJSON">
+			<UniqueIdentifier>{CF86E01B-D8D7-A112-88F3-5883}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxJSON\src">
+			<UniqueIdentifier>{CE83AFE9-FE4A-682E-D5C9-50B4}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxJSON\libs">
+			<UniqueIdentifier>{5302B3F8-ECDD-0465-334A-F39E}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxJSON\libs\jsoncpp">
+			<UniqueIdentifier>{87D6C548-39D9-FD9F-093E-9F4E}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxJSON\libs\jsoncpp\include">
+			<UniqueIdentifier>{0B6CA981-484E-6E8C-776C-7298}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxJSON\libs\jsoncpp\include\json">
+			<UniqueIdentifier>{5FF260B2-1497-3EFE-19D5-40DB}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxJSON\libs\jsoncpp\src">
+			<UniqueIdentifier>{6D569A5B-6719-AEFD-C08E-5CE5}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxSQLiteCpp">
+			<UniqueIdentifier>{1651664B-59C3-28E9-791F-1FE0}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxSQLiteCpp\src">
+			<UniqueIdentifier>{56C5BF85-800D-B4DE-BCBA-C964}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxSQLiteCpp\libs">
+			<UniqueIdentifier>{7C19DB12-FCDD-6A76-1B43-4FC5}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxSQLiteCpp\libs\SQLiteCpp">
+			<UniqueIdentifier>{F1177D5E-11F6-A187-5B8C-56C8}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxSQLiteCpp\libs\SQLiteCpp\include">
+			<UniqueIdentifier>{147DC377-D5F9-227E-1F2E-7B59}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxSQLiteCpp\libs\SQLiteCpp\include\SQLiteCpp">
+			<UniqueIdentifier>{CDE133FE-A349-00F9-1B25-0CE1}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxSQLiteCpp\libs\SQLiteCpp\sqlite3">
+			<UniqueIdentifier>{17AE3E64-AD63-9C0F-9E98-7217}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxSQLiteCpp\libs\SQLiteCpp\src">
+			<UniqueIdentifier>{C840FE7E-3FB1-0C8B-DB88-BB87}</UniqueIdentifier>
+		</Filter>
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="src\ofApp.h">
+			<Filter>src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxBaseGui.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxButton.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxGui.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxGuiGroup.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxLabel.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxPanel.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxSlider.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxSliderGroup.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxToggle.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxJSON\src\ofxJSON.h">
+			<Filter>addons\ofxJSON\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxJSON\src\ofxJSONElement.h">
+			<Filter>addons\ofxJSON\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxJSON\libs\jsoncpp\include\json\json-forwards.h">
+			<Filter>addons\ofxJSON\libs\jsoncpp\include\json</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxJSON\libs\jsoncpp\include\json\json.h">
+			<Filter>addons\ofxJSON\libs\jsoncpp\include\json</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxSQLiteCpp\src\SQLiteCppUtils.h">
+			<Filter>addons\ofxSQLiteCpp\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\include\SQLiteCpp\Assertion.h">
+			<Filter>addons\ofxSQLiteCpp\libs\SQLiteCpp\include\SQLiteCpp</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\include\SQLiteCpp\Backup.h">
+			<Filter>addons\ofxSQLiteCpp\libs\SQLiteCpp\include\SQLiteCpp</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\include\SQLiteCpp\Column.h">
+			<Filter>addons\ofxSQLiteCpp\libs\SQLiteCpp\include\SQLiteCpp</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\include\SQLiteCpp\Database.h">
+			<Filter>addons\ofxSQLiteCpp\libs\SQLiteCpp\include\SQLiteCpp</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\include\SQLiteCpp\Exception.h">
+			<Filter>addons\ofxSQLiteCpp\libs\SQLiteCpp\include\SQLiteCpp</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\include\SQLiteCpp\SQLiteCpp.h">
+			<Filter>addons\ofxSQLiteCpp\libs\SQLiteCpp\include\SQLiteCpp</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\include\SQLiteCpp\Statement.h">
+			<Filter>addons\ofxSQLiteCpp\libs\SQLiteCpp\include\SQLiteCpp</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\include\SQLiteCpp\Transaction.h">
+			<Filter>addons\ofxSQLiteCpp\libs\SQLiteCpp\include\SQLiteCpp</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\sqlite3\sqlite3.h">
+			<Filter>addons\ofxSQLiteCpp\libs\SQLiteCpp\sqlite3</Filter>
+		</ClInclude>
+	</ItemGroup>
+	<ItemGroup>
+		<ResourceCompile Include="icon.rc" />
+	</ItemGroup>
+</Project>

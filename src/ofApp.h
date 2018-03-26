@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "ofxGui.h"
 #include "SQLiteCpp.h"
+#include "userPins.h"
 
 class ofApp : public ofBaseApp{
 
@@ -32,14 +33,30 @@ class ofApp : public ofBaseApp{
 		ofMesh bol;
 		ofEasyCam cam;
 
+		ofTrueTypeFont font;
+
 //sphere
 		ofQuaternion curRot;
 		float dampen;
 		ofVec2f lastmouse;
 
 //social pins
-		int active[6] = { 350, 450, 512, 580, 680, 720 };
+		int active[6] = { 800, 450, 1000, 750, 680, 900 };
 		int selectedPin = 0;
+		int currentText = 0;
+
+//user pins
+		userPins Pin1;
+		userPins Pin2;
+		userPins Pin3;
+		userPins Pin4;
+		userPins Pin5;
+
+//mouse clicks
+		bool clickedPin1;
+		bool clickedPin2;
+
+		
 
 
 };

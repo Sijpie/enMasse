@@ -91,7 +91,7 @@ void ofApp::draw() {
 
 				//haal tekst uit kolom "text" in database
 				const string& currentText = socialQuery->getColumn("text");
-				//print de text naast de vertex maar niet heus want hé dat zou te makkelijk zijn
+				//print de text op de vertex maar niet heus want hé dat zou te makkelijk zijn
 				font.drawString(currentText, nearestVertex.x, nearestVertex.y);
 				
 			}
@@ -108,7 +108,36 @@ void ofApp::draw() {
 		ofDrawSphere(nearestVertex, 10);
 
 
+//social pins tekenen
+		//active1
+		ofFill();
+		ofSetColor(ofColor::white);
+		ofDrawSphere(bol.getVertex(800), 5);
 
+		//active2
+		ofFill();
+		ofSetColor(ofColor::white);
+		ofDrawSphere(bol.getVertex(450), 5);
+
+		//active3
+		ofFill();
+		ofSetColor(ofColor::white);
+		ofDrawSphere(bol.getVertex(1000), 5);
+
+		//active4
+		ofFill();
+		ofSetColor(ofColor::white);
+		ofDrawSphere(bol.getVertex(750), 5);
+
+		//active5
+		ofFill();
+		ofSetColor(ofColor::white);
+		ofDrawSphere(bol.getVertex(680), 5);
+
+		//active6
+		ofFill();
+		ofSetColor(ofColor::white);
+		ofDrawSphere(bol.getVertex(900), 5);
 
 
 

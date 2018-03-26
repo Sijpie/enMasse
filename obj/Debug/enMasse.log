@@ -1,23 +1,4 @@
-﻿  main.cpp
-  ofApp.cpp
-  userPins.cpp
-  ofxBaseGui.cpp
-  ofxButton.cpp
-  ofxGuiGroup.cpp
-  ofxLabel.cpp
-  ofxPanel.cpp
-  ofxSlider.cpp
-  ofxSliderGroup.cpp
-  ofxToggle.cpp
-  ofxJSONElement.cpp
-  jsoncpp.cpp
-  SQLiteCppUtils.cpp
-  Backup.cpp
-  Column.cpp
-  Database.cpp
-  Statement.cpp
-  Transaction.cpp
-  sqlite3.c
+﻿  ofApp.cpp
   enMasse.vcxproj -> D:\Openframeworks\of_v0.9.8_vs_release\of_v0.9.8_vs_release\apps\KM3\enMasse\bin\enMasse_debug.exe
   enMasse.vcxproj -> bin\enMasse_debug.pdb (Full PDB)
   

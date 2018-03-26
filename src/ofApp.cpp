@@ -36,7 +36,10 @@ void ofApp::draw() {
 	cam.begin();
 
 	ofVec3f axis;
-	//float angle;
+	float angle;
+	curRot.getRotate(angle, axis);
+
+	ofRotate(angle, axis.x, axis.y, axis.z);
 
 //main sphere
 	sphere.setRadius(200);

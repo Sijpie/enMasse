@@ -163,7 +163,7 @@ void ofApp::draw() {
 	//Pin2
 	ofFill();
 	ofSetColor(ofColor::darkMagenta);
-	Pin2.draw(bol.getVertex(2100), 15);
+	Pin2.draw(bol.getVertex(100), 15);
 
 	//Pin3
 	ofFill();

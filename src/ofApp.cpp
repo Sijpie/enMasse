@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 void ofApp::setup() {
 
-	image.load("D:\Openframeworks\of_v0.9.8_vs_release\of_v0.9.8_vs_release\apps\KM3\enMasse\bin\data\images\background.jpg");
+	image.load("background.jpg");
 	font.load("CarroisGothic-Regular.ttf", 64);
 	//externe font laden
 

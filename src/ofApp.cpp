@@ -2,8 +2,8 @@
 
 //--------------------------------------------------------------
 void ofApp::setup() {
-
-	image.load("background.jpg");
+	ofSetBackgroundColor(ofColor::black);
+//	image.load("background.jpg");
 	font.load("CarroisGothic-Regular.ttf", 64);
 	//externe font laden
 
@@ -28,7 +28,7 @@ void ofApp::update() {
 //--------------------------------------------------------------
 void ofApp::draw() {
 //draw background
-	image.draw(0, 0);
+//	image.draw(0, 0);
 
 //draw gui
 	gui.draw();
@@ -36,7 +36,7 @@ void ofApp::draw() {
 	cam.begin();
 
 	ofVec3f axis;
-	float angle;
+	//float angle;
 
 //main sphere
 	sphere.setRadius(200);
@@ -89,7 +89,9 @@ void ofApp::draw() {
 			//text gebonden aan pin printen, als de muis in de buurt zit
 			while (socialQuery->executeStep()) {
 
+				//haal tekst uit kolom "text" in database
 				const string& currentText = socialQuery->getColumn("text");
+				//print de text naast de vertex maar niet heus want hé dat zou te makkelijk zijn
 				font.drawString(currentText, nearestVertex.x, nearestVertex.y);
 				
 			}
@@ -100,10 +102,8 @@ void ofApp::draw() {
 		}
 
 	
-		// rondje tekenen om dichtsbijzijnde punt (Van de 6) als muis in de buurt zit. 
+		// rondje tekenen om dichtsbijzijnde punt (Van de 6) als muis in de buurt zit maar wederom niet heus
 		ofNoFill();
-		//ofSetLineWidth(2);
-		//	ofSetColor(ofColor::white);
 		ofSetColor(ofColor::red);
 		ofDrawSphere(nearestVertex, 10);
 
@@ -151,7 +151,7 @@ void ofApp::draw() {
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button) {
 
-	//track mouse position
+	//track mouse position: waar is muis, waar was muis laatst enz
 	ofVec2f mouse(x, y);
 	ofQuaternion yRot((x - lastmouse.x)*dampen, ofVec3f(0, 1, 0));
 	ofQuaternion xRot((y - lastmouse.y)*dampen, ofVec3f(-1, 0, 0));
@@ -162,7 +162,7 @@ void ofApp::mouseDragged(int x, int y, int button) {
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button) {
-
+//Pin1
 	// maak van de muispositie een ofVec2f
 	ofVec3f mouse(x, y);
 
@@ -170,8 +170,6 @@ void ofApp::mousePressed(int x, int y, int button) {
 	float distance = Pin1.PinPos.distance(mouse);
 
 	// is de afstand van muispos tot Pin1 kleiner dan radius?
-
-
 	if (distance < Pin1.radius) {
 		clickedPin1 = true;
 	}
@@ -184,7 +182,34 @@ void ofApp::mousePressed(int x, int y, int button) {
 	// hoera, we hebben op pin1 geklikt!
 	// NIET WAAR
 
+//soap rinse and repeat
+//Pin2
+	float distance2 = Pin2.PinPos.distance(mouse);
+	if (distance2 < Pin2.radius) {
+		clickedPin2 = true;
+	}
+	else {
+		clickedPin2 = false;
+	}
 
+//Pin3
+	float distance3 = Pin3.PinPos.distance(mouse);
+	if (distance3 < Pin3.radius) {
+		clickedPin3 = true;
+	}
+	else {
+		clickedPin3 = false;
+	}
+
+//Pin4
+	float distance4 = Pin4.PinPos.distance(mouse);
+	if (distance4 < Pin4.radius) {
+		clickedPin4 = true;
+	}
+	else {
+		clickedPin4 = false;
+
+	}
 
 
 }

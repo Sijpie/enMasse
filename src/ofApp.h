@@ -27,7 +27,7 @@ class ofApp : public ofBaseApp{
 		ofMesh bol;
 		ofEasyCam cam;
 
-		ofImage image;
+	//	ofImage image;
 		ofTrueTypeFont font;
 
 //sphere
@@ -50,8 +50,8 @@ class ofApp : public ofBaseApp{
 //mouse clicks
 		bool clickedPin1;
 		bool clickedPin2;
-
-		
+		bool clickedPin3;
+		bool clickedPin4;
 
 
 };

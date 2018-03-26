@@ -95,7 +95,7 @@
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\addons\ofxGui\src;..\..\..\addons\ofxJSON\libs;..\..\..\addons\ofxJSON\libs\jsoncpp;..\..\..\addons\ofxJSON\libs\jsoncpp\include;..\..\..\addons\ofxJSON\libs\jsoncpp\include\json;..\..\..\addons\ofxJSON\libs\jsoncpp\src;..\..\..\addons\ofxJSON\src;..\..\..\addons\ofxSQLiteCpp\libs;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\include;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\include\SQLiteCpp;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\sqlite3;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\src;..\..\..\addons\ofxSQLiteCpp\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxGui\src;..\..\..\addons\ofxJSON\libs;..\..\..\addons\ofxJSON\libs\jsoncpp;..\..\..\addons\ofxJSON\libs\jsoncpp\include;..\..\..\addons\ofxJSON\libs\jsoncpp\include\json;..\..\..\addons\ofxJSON\libs\jsoncpp\src;..\..\..\addons\ofxJSON\src;..\..\..\addons\ofxSQLiteCpp\libs;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\include;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\include\SQLiteCpp;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\sqlite3;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\src;..\..\..\addons\ofxSQLiteCpp\src</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <Link>
@@ -114,7 +114,7 @@
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\addons\ofxGui\src;..\..\..\addons\ofxJSON\libs;..\..\..\addons\ofxJSON\libs\jsoncpp;..\..\..\addons\ofxJSON\libs\jsoncpp\include;..\..\..\addons\ofxJSON\libs\jsoncpp\include\json;..\..\..\addons\ofxJSON\libs\jsoncpp\src;..\..\..\addons\ofxJSON\src;..\..\..\addons\ofxSQLiteCpp\libs;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\include;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\include\SQLiteCpp;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\sqlite3;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\src;..\..\..\addons\ofxSQLiteCpp\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxGui\src;..\..\..\addons\ofxJSON\libs;..\..\..\addons\ofxJSON\libs\jsoncpp;..\..\..\addons\ofxJSON\libs\jsoncpp\include;..\..\..\addons\ofxJSON\libs\jsoncpp\include\json;..\..\..\addons\ofxJSON\libs\jsoncpp\src;..\..\..\addons\ofxJSON\src;..\..\..\addons\ofxSQLiteCpp\libs;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\include;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\include\SQLiteCpp;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\sqlite3;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\src;..\..\..\addons\ofxSQLiteCpp\src</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -133,7 +133,7 @@
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\addons\ofxGui\src;..\..\..\addons\ofxJSON\libs;..\..\..\addons\ofxJSON\libs\jsoncpp;..\..\..\addons\ofxJSON\libs\jsoncpp\include;..\..\..\addons\ofxJSON\libs\jsoncpp\include\json;..\..\..\addons\ofxJSON\libs\jsoncpp\src;..\..\..\addons\ofxJSON\src;..\..\..\addons\ofxSQLiteCpp\libs;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\include;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\include\SQLiteCpp;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\sqlite3;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\src;..\..\..\addons\ofxSQLiteCpp\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxGui\src;..\..\..\addons\ofxJSON\libs;..\..\..\addons\ofxJSON\libs\jsoncpp;..\..\..\addons\ofxJSON\libs\jsoncpp\include;..\..\..\addons\ofxJSON\libs\jsoncpp\include\json;..\..\..\addons\ofxJSON\libs\jsoncpp\src;..\..\..\addons\ofxJSON\src;..\..\..\addons\ofxSQLiteCpp\libs;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\include;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\include\SQLiteCpp;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\sqlite3;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\src;..\..\..\addons\ofxSQLiteCpp\src</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -155,7 +155,7 @@
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\addons\ofxGui\src;..\..\..\addons\ofxJSON\libs;..\..\..\addons\ofxJSON\libs\jsoncpp;..\..\..\addons\ofxJSON\libs\jsoncpp\include;..\..\..\addons\ofxJSON\libs\jsoncpp\include\json;..\..\..\addons\ofxJSON\libs\jsoncpp\src;..\..\..\addons\ofxJSON\src;..\..\..\addons\ofxSQLiteCpp\libs;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\include;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\include\SQLiteCpp;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\sqlite3;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\src;..\..\..\addons\ofxSQLiteCpp\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxGui\src;..\..\..\addons\ofxJSON\libs;..\..\..\addons\ofxJSON\libs\jsoncpp;..\..\..\addons\ofxJSON\libs\jsoncpp\include;..\..\..\addons\ofxJSON\libs\jsoncpp\include\json;..\..\..\addons\ofxJSON\libs\jsoncpp\src;..\..\..\addons\ofxJSON\src;..\..\..\addons\ofxSQLiteCpp\libs;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\include;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\include\SQLiteCpp;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\sqlite3;..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\src;..\..\..\addons\ofxSQLiteCpp\src</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <Link>
@@ -173,6 +173,7 @@
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
+    <ClCompile Include="src\userPins.cpp" />
     <ClCompile Include="..\..\..\addons\ofxGui\src\ofxBaseGui.cpp" />
     <ClCompile Include="..\..\..\addons\ofxGui\src\ofxButton.cpp" />
     <ClCompile Include="..\..\..\addons\ofxGui\src\ofxGuiGroup.cpp" />
@@ -193,10 +194,10 @@
     <ClCompile Include="..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\src\Database.cpp" />
     <ClCompile Include="..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\src\Statement.cpp" />
     <ClCompile Include="..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\src\Transaction.cpp" />
-    <ClCompile Include="src\userPins.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h" />
+    <ClInclude Include="src\userPins.h" />
     <ClInclude Include="..\..\..\addons\ofxGui\src\ofxBaseGui.h" />
     <ClInclude Include="..\..\..\addons\ofxGui\src\ofxButton.h" />
     <ClInclude Include="..\..\..\addons\ofxGui\src\ofxGui.h" />
@@ -220,7 +221,6 @@
     <ClInclude Include="..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\include\SQLiteCpp\Statement.h" />
     <ClInclude Include="..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\include\SQLiteCpp\Transaction.h" />
     <ClInclude Include="..\..\..\addons\ofxSQLiteCpp\libs\SQLiteCpp\sqlite3\sqlite3.h" />
-    <ClInclude Include="src\userPins.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">

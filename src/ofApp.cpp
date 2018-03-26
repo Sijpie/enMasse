@@ -3,9 +3,9 @@
 //--------------------------------------------------------------
 void ofApp::setup() {
 
-	ofBackgroundGradient(ofColor(20), ofColor(0));
-
+	image.load("D:\Openframeworks\of_v0.9.8_vs_release\of_v0.9.8_vs_release\apps\KM3\enMasse\bin\data\images\background.jpg");
 	font.load("CarroisGothic-Regular.ttf", 64);
+	//externe font laden
 
 	dampen = .4;
 	ofSetFrameRate(30);
@@ -18,16 +18,6 @@ void ofApp::setup() {
 	string databasePath = ofToDataPath("enmasse.sqlite", true);
 	db = new SQLite::Database(databasePath);
 
-	//currentText = db->execAndGet"SELECT MIN(code) FROM posts").getInt();
-
-	//userPins
-
-	//Pin1(ofColor::blueSteel, 15);
-	//Pin2(ofColor::darkBlue, 15);
-	//Pin3(ofColor(100, 210, 100), 15);
-	//Pin4(ofColor::magenta, 15);
-
-
 }
 
 //--------------------------------------------------------------
@@ -37,48 +27,46 @@ void ofApp::update() {
 
 //--------------------------------------------------------------
 void ofApp::draw() {
+//draw background
+	image.draw(0, 0);
 
-	//draw gui
+//draw gui
 	gui.draw();
-
-	//draw sphere
-	//ofPushMatrix();
-	//ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2, 40);
 
 	cam.begin();
 
 	ofVec3f axis;
 	float angle;
-	//curRot.getRotate(angle, axis);
 
-//	ofRotate(angle, axis.x, axis.y, axis.z);
-
+//main sphere
 	sphere.setRadius(200);
 	sphere.setResolution(30);
 	sphere.setPosition(ofGetWidth() / 2, ofGetHeight() / 2, 0);
 	bol = sphere.getMesh();
 
-	vector<ofVec3f> verts = bol.getVertices();
+	//vertices aanmaken
+	vector<ofVec3f> verts = bol.getVertices(); // vector aanmaken voor vertices
 
-	for (int i = 0; i < verts.size(); i++) {
+	for (int i = 0; i < verts.size(); i++) { //verteces aanmaken/plaatsen
 		verts[i].x += ofRandom(300);
 		verts[i].y += ofRandom(300);
 		verts[i].z += ofRandom(300);
-
-		//bol.addColor(ofFloatColor(float(i) / bol.getVertices().size(), 0, 1.0 - (float(i) / bol.getVertices().size())));
 	}
 
-	ofSetColor(ofColor::darkBlue);
+	//draw sphere
+	ofSetColor(ofColor::navy);
 	glPointSize(1);
 	bol.drawWireframe();
 	bol.drawVertices();
 
+	//afstand uitrekenen tussen muis en dichtsbijzijnde vertex
 	int n = bol.getNumVertices();
 	float nearestDistance = 0;
 	ofVec2f nearestVertex;
 	int nearestIndex = 0;
 	ofVec2f mouse(mouseX, mouseY);
 
+	//loop: langs de 6 punten lopen (waar de "social pins" staan) en kijken of de muis in de buurt zit
 	for (int i = 0; i < 6; i++) {
 		ofVec3f cur = cam.worldToScreen(bol.getVertex(active[i]));
 		float distance = cur.distance(mouse);
@@ -87,21 +75,23 @@ void ofApp::draw() {
 			nearestVertex = cur;
 			nearestIndex = i;
 
-
+			// wanneer de muis in de buurt van een punt zit, de index van de "dichtsbijzinde" punt (van de 6) printen naast die punt
 			ofVec2f offset(10, -10);
 			ofDrawBitmapStringHighlight(ofToString(nearestIndex), bol.getVertex(active[i]));
 
 			selectedPin = (active[i]);
 
-			//social pins
-
+//social pins
+			//met query alle informatie uit database ophalen. Elke text binden aan een van de 6 punten
 			socialQuery = new SQLite::Statement(*db, "SELECT * FROM posts WHERE code=?");
 			socialQuery->bind(1, selectedPin);
 
+			//text gebonden aan pin printen, als de muis in de buurt zit
 			while (socialQuery->executeStep()) {
 
 				const string& currentText = socialQuery->getColumn("text");
 				font.drawString(currentText, nearestVertex.x, nearestVertex.y);
+				
 			}
 
 			socialQuery->reset(); // zet de query weer terug naar de beginstand (met ?)
@@ -109,8 +99,8 @@ void ofApp::draw() {
 
 		}
 
-		//	ofLog() << "vertex = " << nearestVertex << endl;
-
+	
+		// rondje tekenen om dichtsbijzijnde punt (Van de 6) als muis in de buurt zit. 
 		ofNoFill();
 		//ofSetLineWidth(2);
 		//	ofSetColor(ofColor::white);
@@ -122,37 +112,40 @@ void ofApp::draw() {
 
 
 
-		//draw user circle
+//draw user circle
+		//bol aanmaken op sphere, kleur wordt gekozen door GUI
 		ofFill();
 		ofSetColor(color);
 		ofDrawSphere(bol.getVertex(945), 20);
 
 	}
 
-	//draw other circles
-	//circle1
+//draw other circles
+	// rondjes van "andere gebruikers" aanmaken
 
+	//Pin1
 	ofFill();
 	ofSetColor(ofColor::darkViolet);
 	Pin1.draw(bol.getVertex(820), 15);
 
+	//Pin2
+	ofFill();
+	ofSetColor(ofColor::darkMagenta);
+	Pin2.draw(bol.getVertex(2100), 15);
+
+	//Pin3
+	ofFill();
+	ofSetColor(ofColor::teal);
+	Pin2.draw(bol.getVertex(12), 15);
+
+	//Pin4
+	ofFill();
+	ofSetColor(ofColor::orangeRed);
+	Pin2.draw(bol.getVertex(1300), 15);
+
 
 
 	cam.end();
-}
-//--------------------------------------------------------------
-void ofApp::keyPressed(int key) {
-
-}
-
-//--------------------------------------------------------------
-void ofApp::keyReleased(int key) {
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseMoved(int x, int y) {
-
 }
 
 //--------------------------------------------------------------
@@ -169,25 +162,6 @@ void ofApp::mouseDragged(int x, int y, int button) {
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button) {
-
-	//int n = bol.getNumVertices();
-	//ofVec2f mouse(mouseX, mouseY);
-
-
-	//for (int i = 0; i < 6; i++) {
-	//	ofVec3f cur = cam.worldToScreen(bol.getVertex(820));
-	//	float distance = cur.distance(mouse);
-	//	if (i == 0 || distance < nearestDistance) {
-	//		nearestDistance = distance;
-	//		nearestVertex = cur;
-	//		nearestIndex = i;
-	//	}
-
-	//	if (button = 1) {
-	//		 
-	//		if (mouse()
-	//	}
-	//}
 
 	// maak van de muispositie een ofVec2f
 	ofVec3f mouse(x, y);
@@ -208,24 +182,12 @@ void ofApp::mousePressed(int x, int y, int button) {
 	ofLog() << "mouse clicked in Pin 1: " << clickedPin1 << endl;
 
 	// hoera, we hebben op pin1 geklikt!
+	// NIET WAAR
 
 
 
 
 }
 
-//--------------------------------------------------------------
-void ofApp::mouseReleased(int x, int y, int button) {
 
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseEntered(int x, int y) {
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseExited(int x, int y) {
-
-}
 

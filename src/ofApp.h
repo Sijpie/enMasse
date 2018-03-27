@@ -27,7 +27,7 @@ class ofApp : public ofBaseApp{
 		ofMesh bol;
 		ofEasyCam cam;
 
-	//	ofImage image;
+		ofImage image;
 		ofTrueTypeFont font;
 
 //sphere

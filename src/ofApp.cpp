@@ -2,9 +2,9 @@
 
 //--------------------------------------------------------------
 void ofApp::setup() {
-	ofSetBackgroundColor(ofColor::black);
-//	image.load("background.jpg");
-	font.load("CarroisGothic-Regular.ttf", 64);
+//	ofSetBackgroundColor(ofColor::black);
+	image.load("background.jpg");
+	font.load("CarroisGothic-Regular.ttf", 14);
 	//externe font laden
 
 	dampen = .4;
@@ -28,7 +28,7 @@ void ofApp::update() {
 //--------------------------------------------------------------
 void ofApp::draw() {
 //draw background
-//	image.draw(0, 0);
+	image.draw(0, 0);
 
 //draw gui
 	gui.draw();
@@ -62,97 +62,56 @@ void ofApp::draw() {
 	bol.drawWireframe();
 	bol.drawVertices();
 
-	//afstand uitrekenen tussen muis en dichtsbijzijnde vertex
-	int n = bol.getNumVertices();
-	float nearestDistance = 0;
-	ofVec2f nearestVertex;
-	int nearestIndex = 0;
-	ofVec2f mouse(mouseX, mouseY);
-
-	//loop: langs de 6 punten lopen (waar de "social pins" staan) en kijken of de muis in de buurt zit
 	for (int i = 0; i < 6; i++) {
-		ofVec3f cur = cam.worldToScreen(bol.getVertex(active[i]));
-		float distance = cur.distance(mouse);
-		if (i == 0 || distance < nearestDistance) {
-			nearestDistance = distance;
-			nearestVertex = cur;
-			nearestIndex = i;
+		ofVec3f pos = bol.getVertex(active[i]);
+		ofSetColor(ofColor::yellow);
+		ofDrawSphere(pos, 10);
 
-			// wanneer de muis in de buurt van een punt zit, de index van de "dichtsbijzinde" punt (van de 6) printen naast die punt
-			ofVec2f offset(10, -10);
-			ofDrawBitmapStringHighlight(ofToString(nearestIndex), bol.getVertex(active[i]));
-
-			selectedPin = (active[i]);
-
-//social pins
-			//met query alle informatie uit database ophalen. Elke text binden aan een van de 6 punten
-			socialQuery = new SQLite::Statement(*db, "SELECT * FROM posts WHERE code=?");
-			socialQuery->bind(1, selectedPin);
-
-			//text gebonden aan pin printen, als de muis in de buurt zit
-			while (socialQuery->executeStep()) {
-
-				//haal tekst uit kolom "text" in database
-				const string& currentText = socialQuery->getColumn("text");
-				//print de text op de vertex maar niet heus want hé dat zou te makkelijk zijn
-				font.drawString(currentText, nearestVertex.x, nearestVertex.y);
-				
-			}
-
-			socialQuery->reset(); // zet de query weer terug naar de beginstand (met ?)
-
-
-		}
-
-	
-		// rondje tekenen om dichtsbijzijnde punt (Van de 6) als muis in de buurt zit maar wederom niet heus
-		ofNoFill();
-		ofSetColor(ofColor::red);
-		ofDrawSphere(nearestVertex, 10);
-
-
-//social pins tekenen
-		//active1
-		ofFill();
-		ofSetColor(ofColor::white);
-		ofDrawSphere(bol.getVertex(800), 5);
-
-		//active2
-		ofFill();
-		ofSetColor(ofColor::white);
-		ofDrawSphere(bol.getVertex(450), 5);
-
-		//active3
-		ofFill();
-		ofSetColor(ofColor::white);
-		ofDrawSphere(bol.getVertex(1000), 5);
-
-		//active4
-		ofFill();
-		ofSetColor(ofColor::white);
-		ofDrawSphere(bol.getVertex(750), 5);
-
-		//active5
-		ofFill();
-		ofSetColor(ofColor::white);
-		ofDrawSphere(bol.getVertex(680), 5);
-
-		//active6
-		ofFill();
-		ofSetColor(ofColor::white);
-		ofDrawSphere(bol.getVertex(900), 5);
-
-
-
-//draw user circle
-		//bol aanmaken op sphere, kleur wordt gekozen door GUI
-		ofFill();
-		ofSetColor(color);
-		ofDrawSphere(bol.getVertex(945), 20);
 
 	}
 
-//draw other circles
+	//social pins tekenen
+	//active1
+	ofFill();
+	ofSetColor(ofColor::white);
+	ofDrawSphere(bol.getVertex(800), 5);
+
+	//active2
+	ofFill();
+	ofSetColor(ofColor::white);
+	ofDrawSphere(bol.getVertex(450), 5);
+
+	//active3
+	ofFill();
+	ofSetColor(ofColor::white);
+	ofDrawSphere(bol.getVertex(1000), 5);
+
+	//active4
+	ofFill();
+	ofSetColor(ofColor::white);
+	ofDrawSphere(bol.getVertex(750), 5);
+
+	//active5
+	ofFill();
+	ofSetColor(ofColor::white);
+	ofDrawSphere(bol.getVertex(680), 5);
+
+	//active6
+	ofFill();
+	ofSetColor(ofColor::white);
+	ofDrawSphere(bol.getVertex(900), 5);
+
+
+
+	//draw user circle
+	//bol aanmaken op sphere, kleur wordt gekozen door GUI
+	ofFill();
+	ofSetColor(color);
+	ofDrawSphere(bol.getVertex(1), 20);
+
+
+
+	//draw other circles
 	// rondjes van "andere gebruikers" aanmaken
 
 	//Pin1
@@ -176,8 +135,61 @@ void ofApp::draw() {
 	Pin2.draw(bol.getVertex(1300), 15);
 
 
-
 	cam.end();
+
+	//afstand uitrekenen tussen muis en dichtsbijzijnde vertex
+	int n = bol.getNumVertices();
+	float nearestDistance = 0;
+	ofVec2f nearestVertex;
+	int nearestIndex = 0;
+	ofVec2f mouse(mouseX, mouseY);
+
+	//loop: langs de 6 punten lopen (waar de "social pins" staan) en kijken of de muis in de buurt zit
+	for (int i = 0; i < 6; i++) {
+		ofVec3f cur = cam.worldToScreen(bol.getVertex(active[i]));
+		float distance = cur.distance(mouse);
+		if (i == 0 || distance < nearestDistance) {
+			nearestDistance = distance;
+			nearestVertex = cur;
+			nearestIndex = i;
+
+			// wanneer de muis in de buurt van een punt zit, de index van de "dichtsbijzinde" punt (van de 6) printen naast die punt
+			ofVec2f offset(10, -10);
+			ofDrawBitmapStringHighlight(ofToString(nearestIndex), bol.getVertex(active[i]));
+
+			selectedPin = (active[i]);
+
+			//social pins
+						//met query alle informatie uit database ophalen. Elke text binden aan een van de 6 punten
+			socialQuery = new SQLite::Statement(*db, "SELECT * FROM posts WHERE code=?");
+			socialQuery->bind(1, selectedPin);
+
+			//text gebonden aan pin printen, als de muis in de buurt zit
+			while (socialQuery->executeStep()) {
+
+				//haal tekst uit kolom "text" in database
+				const string& currentText = socialQuery->getColumn("text");
+				//print de text op de vertex maar niet heus want hé dat zou te makkelijk zijn
+				font.drawString(currentText, nearestVertex.x, nearestVertex.y);
+
+			}
+
+			socialQuery->reset(); // zet de query weer terug naar de beginstand (met ?)
+
+
+		}
+
+
+		// rondje tekenen om dichtsbijzijnde punt (Van de 6) als muis in de buurt zit maar wederom niet heus
+		//ofNoFill();
+		//ofSetColor(ofColor::red);
+		//ofDrawSphere(nearestVertex, 10);
+
+
+	}
+
+
+	//cam.end();
 }
 
 //--------------------------------------------------------------

@@ -28,7 +28,8 @@ void ofApp::update() {
 //--------------------------------------------------------------
 void ofApp::draw() {
 //draw background
-	image.draw(0, 0);
+	ofSetColor(ofColor::white);
+	image.draw(0, 0, 1600, 900);
 
 //draw gui
 	gui.draw();
@@ -57,9 +58,10 @@ void ofApp::draw() {
 	}
 
 	//draw sphere
-	ofSetColor(ofColor::navy);
+	ofSetColor(ofColor::royalBlue);
 	glPointSize(1);
-	bol.drawWireframe();
+	//bol.drawWireframe();
+	bol.draw();
 	bol.drawVertices();
 
 	for (int i = 0; i < 6; i++) {
@@ -75,7 +77,7 @@ void ofApp::draw() {
 	ofFill();
 	ofSetColor(ofColor::white);
 	ofDrawSphere(bol.getVertex(800), 5);
-
+		
 	//active2
 	ofFill();
 	ofSetColor(ofColor::white);
@@ -107,7 +109,7 @@ void ofApp::draw() {
 	//bol aanmaken op sphere, kleur wordt gekozen door GUI
 	ofFill();
 	ofSetColor(color);
-	ofDrawSphere(bol.getVertex(1), 20);
+	ofDrawSphere(bol.getVertex(920), 20);
 
 
 
@@ -148,7 +150,8 @@ void ofApp::draw() {
 	for (int i = 0; i < 6; i++) {
 		ofVec3f cur = cam.worldToScreen(bol.getVertex(active[i]));
 		float distance = cur.distance(mouse);
-		if (i == 0 || distance < nearestDistance) {
+		//if (i == 0 || distance < nearestDistance) {
+		if (distance <100){
 			nearestDistance = distance;
 			nearestVertex = cur;
 			nearestIndex = i;
@@ -170,6 +173,7 @@ void ofApp::draw() {
 				//haal tekst uit kolom "text" in database
 				const string& currentText = socialQuery->getColumn("text");
 				//print de text op de vertex maar niet heus want hé dat zou te makkelijk zijn
+				ofSetColor(ofColor::white);
 				font.drawString(currentText, nearestVertex.x, nearestVertex.y);
 
 			}
@@ -211,7 +215,7 @@ void ofApp::mousePressed(int x, int y, int button) {
 	ofVec3f mouse(x, y);
 
 	// bereken de afstand van de muis tot Pin1
-	float distance = Pin1.PinPos.distance(mouse);
+	float distance = mouse.distance(cam.worldToScreen(Pin1.PinPos)); //cam.worldtoscreen zorgt ervoor dat muis op 3d coordinaat kan klikken
 
 	// is de afstand van muispos tot Pin1 kleiner dan radius?
 	if (distance < Pin1.radius) {
@@ -220,6 +224,7 @@ void ofApp::mousePressed(int x, int y, int button) {
 	else {
 		clickedPin1 = false;
 	}
+	ofLog() << "distance = " << distance << endl;
 
 	ofLog() << "mouse clicked in Pin 1: " << clickedPin1 << endl;
 
@@ -228,8 +233,8 @@ void ofApp::mousePressed(int x, int y, int button) {
 
 //soap rinse and repeat
 //Pin2
-	float distance2 = Pin2.PinPos.distance(mouse);
-	if (distance2 < Pin2.radius) {
+	distance = mouse.distance(cam.worldToScreen(Pin2.PinPos));
+	if (distance < Pin2.radius) {
 		clickedPin2 = true;
 	}
 	else {
@@ -237,8 +242,8 @@ void ofApp::mousePressed(int x, int y, int button) {
 	}
 
 //Pin3
-	float distance3 = Pin3.PinPos.distance(mouse);
-	if (distance3 < Pin3.radius) {
+	distance = mouse.distance(cam.worldToScreen(Pin3.PinPos));
+	if (distance < Pin3.radius) {
 		clickedPin3 = true;
 	}
 	else {
@@ -246,8 +251,8 @@ void ofApp::mousePressed(int x, int y, int button) {
 	}
 
 //Pin4
-	float distance4 = Pin4.PinPos.distance(mouse);
-	if (distance4 < Pin4.radius) {
+	distance = mouse.distance(cam.worldToScreen(Pin4.PinPos));
+	if (distance < Pin4.radius) {
 		clickedPin4 = true;
 	}
 	else {

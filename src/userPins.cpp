@@ -14,4 +14,6 @@ void userPins::draw(ofVec3f vecpos, int myradius)
 	ofDrawSphere(vecpos, myradius);
 
 	PinPos = vecpos;
+
+	radius = myradius;
 }
